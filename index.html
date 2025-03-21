@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pythagoras Explorer</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="squares.js"></script>
-    <script src="StreckeAB_Winkel_Grid.js"></script>
-    <style>
-        /* Stellt sicher, dass der gesamte Body im Flex-Layout dargestellt wird */
-        body { font-family: Arial, sans-serif; text-align: center; display: flex; }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pythagoras Explorer</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script defer src="squares.js"></script>
+        <script defer src="SteckeAB_Winkel_Grid.js"></script>
+        <style>
+            /* Stellt sicher, dass der gesamte Body im Flex-Layout dargestellt wird */
+            body { font-family: Arial, sans-serif; text-align: center; display: flex; }
 
-        /* Container für beide Seiten */
-        #container { display: flex; width: 100%; height: 100vh; }
+            /* Container für beide Seiten */
+            #container { display: flex; width: 100%; height: 100vh; }
 
-        /* Linke und rechte Spalten gleichmäßig aufteilen */
-        #left, #right { flex: 1; padding: 20px; position: relative; }
+            /* Linke und rechte Spalten gleichmäßig aufteilen */
+            #left, #right { flex: 1; padding: 20px; position: relative; }
 
-        /* Trennlinie zwischen linker und rechter Spalte */
-        #right { border-left: 2px solid #000; }
+            /* Trennlinie zwischen linker und rechter Spalte */
+            #right { border-left: 2px solid #000; }
 
-        /* Das Canvas soll mittig erscheinen */
-        canvas { display: block; margin: auto; background: white; }
+            /* Das Canvas soll mittig erscheinen */
+            canvas { display: block; margin: auto; background: white; }
 
-        /* Styling für Buttons */
-        button { margin: 10px; padding: 10px; }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <div id="left">
-            <h2>Interaktive Dreieckserstellung</h2>
-            <p>Klicke auf die Zeichenfläche, um die Eckpunkte deines Dreiecks zu setzen oder ziehe die Punkte, um es zu verändern.</p>
-            <div id="canvas-container"></div> <!-- Hier wird das Canvas später eingefügt -->
-            <p id="triangle-info"></p> <!-- Hier werden die Seitenlängen des Dreiecks angezeigt -->
-            <p id="triangle-winkel" style="display: none;"></p><!-- Hier werden die Winkel des Dreiecks angezeigt -->
-            <button id="fixAB" onclick="toggleFixAB()">Fix AB</button> <!-- Button zum Fixieren der Linie AB -->
-            <button id="areas" onclick="toggleAreas()">Pythagoras</button>
-            <button id="winkel" onclick="toggleWinkel()">Winkel</button>
+            /* Styling für Buttons */
+            button { margin: 10px; padding: 10px; }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="left">
+                <h2>Interaktive Dreieckserstellung</h2>
+                <p>Klicke auf die Zeichenfläche, um die Eckpunkte deines Dreiecks zu setzen oder ziehe die Punkte, um es zu verändern.</p>
+                <div id="canvas-container"></div> <!-- Hier wird das Canvas später eingefügt -->
+                <p id="triangle-info"></p> <!-- Hier werden die Seitenlängen des Dreiecks angezeigt -->
+                <p id="triangle-winkel" style="display: none;"></p><!-- Hier werden die Winkel des Dreiecks angezeigt -->
+                <button id="fixAB" onclick="toggleFixAB()">Fix AB</button> <!-- Button zum Fixieren der Linie AB -->
+                <button id="areas" onclick="toggleAreas()">Pythagoras</button>
+                <button id="winkel" onclick="toggleWinkel()">Winkel</button>
 
+            </div>
+            <div id="right">
+                <h2>Beweis des Satzes von Pythagoras</h2>
+                <button onclick="showGeometricProof()">Geometrischer Beweis</button> <!-- Zeigt eine textuelle Erklärung des geometrischen Beweises -->
+                <button onclick="showAlgebraicProof()">Rechnerischer Beweis</button> <!-- Zeigt die algebraische Berechnung -->
+                <div id="proof-area"></div> <!-- Hier werden Beweise dargestellt -->
+                <p id="warningArea"></p>
+            </div>
         </div>
-        <div id="right">
-            <h2>Beweis des Satzes von Pythagoras</h2>
-            <button onclick="showGeometricProof()">Geometrischer Beweis</button> <!-- Zeigt eine textuelle Erklärung des geometrischen Beweises -->
-            <button onclick="showAlgebraicProof()">Rechnerischer Beweis</button> <!-- Zeigt die algebraische Berechnung -->
-            <div id="proof-area"></div> <!-- Hier werden Beweise dargestellt -->
-            <p id="warningArea"></p>
-        </div>
-    </div>
-
-</body>
+    </body>
 </html>

@@ -24,7 +24,7 @@ function calculateSquarePointPosition(p1, p2, p3) {
     squarePoints.push(p1,p2);
 
     if (p1.x === p2.x) {
-    //Sonderfall bei gleichem X-Wert
+        // Sonderfall bei gleichem X-Wert
         return;
     }
     if (p1.y === p2.y) {
@@ -85,6 +85,6 @@ function drawSquares() {
 
     squarePoints.length = 0;
     calculateSquarePointPosition(triangle1.A, triangle1.C, triangle1.B);
-
-
 }
+
+function getSquarePoints() { return squarePoints; }

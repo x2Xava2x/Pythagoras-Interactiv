@@ -1,7 +1,8 @@
+const gridSize = 20;            // Größe des Rasters
+const cmPerGrid = 0.25 / 10;    // Umrechnung von Raster zu cm
+
 let points = [];                // Array zur Speicherung der Eckpunkte des Dreiecks
 let draggingPoint = null;       // Variable für den zu ziehenden Punkt
-let gridSize = 20;              // Größe des Rasters
-let cmPerGrid = 0.25 / 10;      // Umrechnung von Raster zu cm
 let fixAB = false;              // Gibt an, ob die Strecke AB fixiert ist
 let circleCenter, circleRadius; // Variablen für Kreisbewegung der dritten Ecke
 let winkel = false;             //Gibt an, ob die Winkel angezeigt werden
@@ -16,6 +17,8 @@ function setup() {
 }
 
 function draw() {
+    let squarePoints = getSquarePoints();
+
     background(255);
     drawGrid(); // Zeichnet das Raster
     fill(0);
@@ -56,13 +59,12 @@ function draw() {
         }
         //zeichne quadrate
         if (fixAB && areas) {
+            drawSquares();
             quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
-            //drawSquares();
         }
         if (areas && (parseFloat(alpha.toFixed(2)) === 90 || parseFloat(beta.toFixed(2)) === 90 || parseFloat(gamma.toFixed(2)) === 90)) {
             //drawSquares();
         }
-
     }
 }
 
