@@ -35,6 +35,8 @@ erwartet aber genau 4 Punkte. Das gefällt `p5JS` aber nicht.
 
 Mehr dann am Sonntag. Oder morgen schon wenn ich nicht vom Bücher schleppen kaputt bin :)
 
+***
+
 ## 22.03 / 14.30 Mako
 Ich habe mal die Sonderfälle mit eingefügt müsste aber nochaml überprüfen, wenn die Vierecke gezeichnet werden, ob die auch auf der richtigen seite liegen... ist nur ein Minuszeichen mehr oder weniger.
 
@@ -42,12 +44,12 @@ sonst gibt es in `StreckenAB_Winkel_Grid.js` massive probleme mit den if befehle
 
 ```js
 if (fixAB && areas) {
-            drawSquares();
-            quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
-        }
-        if (areas && (parseFloat(alpha.toFixed(2)) === 90 || parseFloat(beta.toFixed(2)) === 90 || parseFloat(gamma.toFixed(2)) === 90)) {
-            //drawSquares();
-        }
+    drawSquares();
+    quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
+}
+if (areas && (parseFloat(alpha.toFixed(2)) === 90 || parseFloat(beta.toFixed(2)) === 90 || parseFloat(gamma.toFixed(2)) === 90)) {
+    //drawSquares();
+}
 ```
 wenn man den code löscht kann man die punkte nach aktivierung von winkel diese wenigstens wieder bewegen.
 Bücherschleppen gut überstanden? :) 
@@ -59,3 +61,17 @@ let squarePoints = getSquarePoints();
 crasht bei mir alles also da verschwindet das grid und alles zeichnungen.
 
 ***
+
+## 23.03. / ??
+Dann fliegt der Getter schonmal und ich bastel mit Chrome weiter. :)
+
+Anscheinend habe ich irgendwie das Problem mit dem Verschieben der Punkte gelöst. Zumindest geht es jetzt bei mir.
+Allerdings: falls FixAB aktiv ist und $C$ direkt auf $A$ oder $B$ abgelegt wird, kann man $C$ nicht mehr "greifen" und weiter schieben.
+
+Plus, die Quadrate für Seiten $a$ und $b$ sehen schon mal ganz gut aus von den Eckpunkten her.
+
+![screen](./imgs/Screenshot%202025-03-22%20at%2022-40-48%20Pythagoras%20Explorer.png)
+
+Aber die Eckpuntke sind irgendwie komisch verbunden..
+
+PS: Der Packesel hat den Tag überlebt ^^

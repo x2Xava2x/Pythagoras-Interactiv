@@ -5,8 +5,10 @@ let points = [];                // Array zur Speicherung der Eckpunkte des Dreie
 let draggingPoint = null;       // Variable für den zu ziehenden Punkt
 let fixAB = false;              // Gibt an, ob die Strecke AB fixiert ist
 let circleCenter, circleRadius; // Variablen für Kreisbewegung der dritten Ecke
-let winkel = false;             //Gibt an, ob die Winkel angezeigt werden
-let alpha, beta, gamma = 0;
+let winkel = false;             // Gibt an, ob die Winkel angezeigt werden
+let alpha = 0;                  // \
+let beta = 0;                   // |- JS macht keine Mehrfachzuweisungen
+let gamma = 0;                  // /
 let angle = false;
 let triangle1;
 
@@ -19,7 +21,7 @@ function setup() {
 function draw() {
     // Kompatibilität SpiderMonkey <> V8
     // Firefox kann anscheinend nicht ohne Probleme auf squares.squarePoints zugreifen, deswegen kleiner Getter hier
-    let squarePoints = getSquarePoints();
+    // let squarePoints = getSquarePoints();
 
     background(255);
     drawGrid(); // Zeichnet das Raster
