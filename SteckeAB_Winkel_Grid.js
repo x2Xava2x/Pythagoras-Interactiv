@@ -59,7 +59,8 @@ function draw() {
         if (winkel) {
             calculateTriangleAngles();
         }
-        //zeichne quadrate
+
+        //hier gibt es massive probleme mit aber kp warum
         if (fixAB && areas) {
             drawSquares();
             quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
