@@ -35,4 +35,18 @@ erwartet aber genau 4 Punkte. Das gefällt `p5JS` aber nicht.
 
 Mehr dann am Sonntag. Oder morgen schon wenn ich nicht vom Bücher schleppen kaputt bin :)
 
+Ich habe mal die Sonderfälle mit eingefügt müsste aber nochaml überprüfen, wenn die Vierecke gezeichnet werden, ob die auch auf der richtigen seite liegen... ist nur ein Minuszeichen mehr oder weniger.
+
+sonst gibt es in $StreckenAB_Winkel_Grid.js$ massive probleme mit den if befehlen da diese die möglichkeit des Bewegens der Punkte blockieren warum auch immer, weil areas eigentlich gleich false ist.
+
+```js
+if (fixAB && areas) {
+            drawSquares();
+            quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
+        }
+        if (areas && (parseFloat(alpha.toFixed(2)) === 90 || parseFloat(beta.toFixed(2)) === 90 || parseFloat(gamma.toFixed(2)) === 90)) {
+            //drawSquares();
+        }
+```
+
 ***
