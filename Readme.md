@@ -52,4 +52,10 @@ if (fixAB && areas) {
 wenn man den code löscht kann man die punkte nach aktivierung von winkel diese wenigstens wieder bewegen.
 Bücherschleppen gut überstanden? :) 
 
+achso der getter 
+```js
+let squarePoints = getSquarePoints();
+```
+crasht bei mir alles also da verschwindet das grid und alles zeichnungen.
+
 ***
