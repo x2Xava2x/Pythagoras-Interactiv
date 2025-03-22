@@ -17,6 +17,8 @@ function setup() {
 }
 
 function draw() {
+    // Kompatibilität SpiderMonkey <> V8
+    // Firefox kann anscheinend nicht ohne Probleme auf squares.squarePoints zugreifen, deswegen kleiner Getter hier
     let squarePoints = getSquarePoints();
 
     background(255);
