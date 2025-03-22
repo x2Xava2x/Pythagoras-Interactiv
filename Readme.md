@@ -35,9 +35,10 @@ erwartet aber genau 4 Punkte. Das gefällt `p5JS` aber nicht.
 
 Mehr dann am Sonntag. Oder morgen schon wenn ich nicht vom Bücher schleppen kaputt bin :)
 
+## 22.03 / 14.30 Mako
 Ich habe mal die Sonderfälle mit eingefügt müsste aber nochaml überprüfen, wenn die Vierecke gezeichnet werden, ob die auch auf der richtigen seite liegen... ist nur ein Minuszeichen mehr oder weniger.
 
-sonst gibt es in $StreckenAB_Winkel_Grid.js$ massive probleme mit den if befehlen da diese die möglichkeit des Bewegens der Punkte blockieren warum auch immer, weil areas eigentlich gleich false ist.
+sonst gibt es in `StreckenAB_Winkel_Grid.js` massive probleme mit den if befehlen da diese die möglichkeit des Bewegens der Punkte blockieren warum auch immer, weil areas eigentlich gleich false ist.
 
 ```js
 if (fixAB && areas) {
@@ -48,5 +49,7 @@ if (fixAB && areas) {
             //drawSquares();
         }
 ```
+wenn man den code löscht kann man die punkte nach aktivierung von winkel diese wenigstens wieder bewegen.
+Bücherschleppen gut überstanden? :) 
 
 ***
