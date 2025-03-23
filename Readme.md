@@ -82,3 +82,4 @@ Ich habe mich mal der sache angenommen also die hälfte funzt jetzt auch richtig
 also manchmal werden die vierecke sauber und ordentlich erstellt aber an manchen überprüfungen habe ich noch logische Fehler drinnen i guess. sonst habe ich angefangen die Rechte seite in angriff zu nehemen da funzt aber noch alles.
 
 schönen rest Sonntag dir und danke schonmal für die Hilfe, das hat mich 3 schritte mindestens vorran gebracht. ^^
+![screen](./imgs/Screenshot%202025-03-23%20191502.png)
