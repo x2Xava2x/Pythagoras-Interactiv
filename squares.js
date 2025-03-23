@@ -72,13 +72,20 @@ function calculateSquarePointPosition(p1, p2, p3) {
         }
     }
     //Berechnung der Geraden von p1&p2 sowie Richtungsvektor
+    if(p1.x > p2.x){
+        let tp = p1;
+        p1 = p2;
+        p2 = tp;
+    }
     let m = (p2.y - p1.y) / (p2.x - p1.x);
 
     if(m > 0) {
         let n = p1.y - (m * p1.x);
-        let fy = m * p3.x + n;
+        //y = m * x + n
+        //let fy = m * p3.x + n;
+        let fx = (p3.y - n)/m
         let functionDirection = { x: p1.x - p2.x, y: p1.y - p2.y };
-        if(fy > p3.y) { //wenn fy > p3.y liegt p3 rechts von Gerade p1p2 -> Square muss links davon erzeugt werden
+        if(fx < p3.x) { //wenn fy > p3.y liegt p3 rechts von Gerade p1p2 -> Square muss links davon erzeugt werden
             let normal = { x: functionDirection.y, y: -(functionDirection.x) };
             let t = { x: p1.x + normal.x, y: p1.y + normal.y };
             squarePoints.push(t);
@@ -86,7 +93,7 @@ function calculateSquarePointPosition(p1, p2, p3) {
             squarePoints.push(t);
             return;
         }
-        if(fy < p3.y) { //wenn fy > p3.y liegt p3 links von Gerade p1p2 -> Square muss rechts davon erzeugt werden
+        if(fx > p3.x) { //wenn fy > p3.y liegt p3 links von Gerade p1p2 -> Square muss rechts davon erzeugt werden
             let normal = { x: -(functionDirection.y), y: functionDirection.x };
             let t = { x: p1.x + normal.x, y: p1.y + normal.y };
             squarePoints.push(t);
@@ -118,6 +125,7 @@ function calculateSquarePointPosition(p1, p2, p3) {
 }
 
 function drawSquares() {
+    //erstes Quadrat erstellen (AB)
     squarePoints.length = 0;
     calculateSquarePointPosition(triangle1.A, triangle1.B, triangle1.C);
     if(triangle1.B.x < triangle1.A.x){
@@ -127,7 +135,7 @@ function drawSquares() {
     }
 
 
-    //zweites Quadrat erstellen
+    //zweites Quadrat erstellen (BC)
     squarePoints.length = 0;
     calculateSquarePointPosition(triangle1.B, triangle1.C, triangle1.A);
     if(triangle1.C.y < triangle1.B.y){//Sonderfall
@@ -136,7 +144,7 @@ function drawSquares() {
         quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[3].x,squarePoints[3].y,squarePoints[2].x,squarePoints[2].y);
     }
 
-    //drittes Quadrat erstellen
+    //drittes Quadrat erstellen (AC)
     squarePoints.length = 0;
     calculateSquarePointPosition(triangle1.A, triangle1.C, triangle1.B);
     if(triangle1.C.y < triangle1.A.y){//Sonderfall

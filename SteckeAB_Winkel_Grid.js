@@ -174,19 +174,3 @@ function toggleFixAB() {
     fixAB = !fixAB;
     document.getElementById("fixAB").innerText = fixAB ? "Fix AB: AN" : "Fix AB: AUS";
 }
-
-//muss alles überarbeitet werden
-function showGeometricProof() {
-    document.getElementById('proof-area').innerHTML = '<p>Geometrischer Beweis: Die Flächen der Kathetenquadrate ergeben zusammen die Fläche des Hypotenusenquadrats.</p>';
-}
-
-function showAlgebraicProof() {
-    if (points.length === 3) {
-        let c = dist(points[0].x, points[0].y, points[1].x, points[1].y) * cmPerGrid;
-        let a = dist(points[1].x, points[1].y, points[2].x, points[2].y) * cmPerGrid;
-        let b = dist(points[2].x, points[2].y, points[0].x, points[0].y) * cmPerGrid;
-        document.getElementById('proof-area').innerHTML = `<p>Rechnerischer Beweis: a² + b² = c² <br> ${a.toFixed(2)}² + ${b.toFixed(2)}² = ${c.toFixed(2)}²</p>`;
-    } else {
-        document.getElementById('proof-area').innerText = 'Bitte erst ein Dreieck zeichnen!';
-    }
-}
