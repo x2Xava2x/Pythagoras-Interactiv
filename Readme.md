@@ -75,3 +75,10 @@ Plus, die Quadrate für Seiten $a$ und $b$ sehen schon mal ganz gut aus von den 
 Aber die Eckpuntke sind irgendwie komisch verbunden..
 
 PS: Der Packesel hat den Tag überlebt ^^
+
+## 23.03. / 17.51 Mako
+
+Ich habe mich mal der sache angenommen also die hälfte funzt jetzt auch richtig aber die andere läuft noch immer nicht. 
+also manchmal werden die vierecke sauber und ordentlich erstellt aber an manchen überprüfungen habe ich noch logische Fehler drinnen i guess. sonst habe ich angefangen die Rechte seite in angriff zu nehemen da funzt aber noch alles.
+
+schönen rest Sonntag dir und danke schonmal für die Hilfe, das hat mich 3 schritte mindestens vorran gebracht. ^^
