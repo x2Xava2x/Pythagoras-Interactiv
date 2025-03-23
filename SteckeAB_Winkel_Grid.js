@@ -65,10 +65,9 @@ function draw() {
         //hier gibt es massive probleme mit aber kp warum
         if (fixAB && areas) {
             drawSquares();
-            quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
         }
         if (areas && (parseFloat(alpha.toFixed(2)) === 90 || parseFloat(beta.toFixed(2)) === 90 || parseFloat(gamma.toFixed(2)) === 90)) {
-            //drawSquares();
+            drawSquares();
         }
     }
 }
