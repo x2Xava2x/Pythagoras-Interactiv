@@ -11,6 +11,8 @@ let beta = 0;                   // |- JS macht keine Mehrfachzuweisungen
 let gamma = 0;                  // /
 let angle = false;
 let triangle1;
+let p = 0;
+let q = 0;
 
 function setup() {
     // Erstellt das Zeichenfeld und fügt es in den Container ein
@@ -60,6 +62,16 @@ function draw() {
 
         if (winkel) {
             calculateTriangleAngles();
+        }
+        if(algebraic) {
+            calculateTriangleAngles();
+            algebraicProofText();
+            if(s2) {
+                khSätze();
+                if(s3) {
+                    khPythagoras();
+                }
+            }
         }
 
         //hier gibt es massive probleme mit aber kp warum

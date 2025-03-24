@@ -9,6 +9,14 @@
         <script defer src="SteckeAB_Winkel_Grid.js"></script>
         <script defer src="algebraic-proof-area.js"></script>
         <script defer src="geometric-proof-area.js"></script>
+        <script>
+            MathJax = {
+              tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+              svg: { fontCache: 'global' }
+            };
+        </script>
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
         <style>
             /* Stellt sicher, dass der gesamte Body im Flex-Layout dargestellt wird */
             body { font-family: Arial, sans-serif; text-align: center; display: flex; }
@@ -45,16 +53,24 @@
             <div id="right">
                 <h2>Beweis des Satzes von Pythagoras</h2>
                 <button id="geometric" onclick="showGeometricProof()">Geometrischer Beweis</button> <!-- Zeigt eine textuelle Erklärung des geometrischen Beweises -->
-                <button id="algebraic" onclick="showAlgebraicProof()">Ähnlichkeitsbeweis</button> <!-- Zeigt die algebraische Berechnung -->
+                <button id="algebraic" onclick="showAlgebraicProof();">Ähnlichkeitsbeweis</button> <!-- Zeigt die algebraische Berechnung -->
                 <hr>
-                <div id="algebraic-proof-area" style="display: none;">
+                <div id="algebraic-proof-area" style="display: none;"> <!-- Hier wird der Ähnlichkeits Beweis dargestellt -->
+                    <p id="text-alg0"></p>
+                    <p id="text-alg01">Die Dreiecke sind einander ähnlich, denn:</p>
+                    <div id="text-alg"></div>
                     <button id="b1-alg" onclick="s2alg()">Schritt 2</button>
                     <hr id="hr1-alg" style="display: none;">
-                    <button id="b2-alg" style="display: none;" onclick="s3alg()">Schritt 3</button>
+                    <p id="text-alg2" style="display: none;">Aufgrund des 1. Ähnlichkeitssatzes ergeben sich folgende drei wichtige Seitenverhältnisse:</p>
+                    <div id="text-alg3" style="display: none;"></div>
+                    <button id="b2-alg" style="display: none; margin: 20px auto;" onclick="s3alg()">Schritt 3</button>
                     <hr id="hr2-alg" style="display: none;">
+                    <div id="text-alg4" style="display: none;"></div>
                     <hr id="hr3-alg" style="display: none;">
-                </div> <!-- Hier werden algebraische Beweise dargestellt -->
-                <div id="geometric-proof-area"></div> <!-- Hier werden geometrische Beweise dargestellt -->
+                </div>
+                <div id="geometric-proof-area"> <!-- Hier werden geometrische Beweise dargestellt -->
+
+                </div>
 
             </div>
         </div>
