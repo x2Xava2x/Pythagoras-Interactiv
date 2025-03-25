@@ -1,0 +1,85 @@
+# Devlog
+
+## 21.03. / 23.10, Simko
+
+### 1. JS Imports
+
+Sollte die Seite nicht richtig laden, füge nochmal die Imports neu ein. Ich hatte das Problem auch - kommt von Github.
+```js
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script defer src="squares.js"></script>
+<script defer src="SteckeAB_Winkel_Grid.js"></script>
+```
+
+### 2. SquarePoints
+
+File: `squares.js:22`
+
+Segment: `function calculateSquarePointPosition(...)`
+
+```js
+if (p1.x === p2.x) {
+    // Sonderfall bei gleichem X-Wert
+    return;
+}
+```
+Liegen $p_1$ und $p_2$ vertikal auf einer Gerade beendet die Funktion und
+```js
+let squarePoints = [];
+```
+enthält dann nur 2 Punkte.
+```js
+function drawSquares() { ... }
+```
+erwartet aber genau 4 Punkte. Das gefällt `p5JS` aber nicht.
+
+Mehr dann am Sonntag. Oder morgen schon wenn ich nicht vom Bücher schleppen kaputt bin :)
+
+***
+
+## 22.03 / 14.30 Mako
+Ich habe mal die Sonderfälle mit eingefügt müsste aber nochaml überprüfen, wenn die Vierecke gezeichnet werden, ob die auch auf der richtigen seite liegen... ist nur ein Minuszeichen mehr oder weniger.
+
+sonst gibt es in `StreckenAB_Winkel_Grid.js` massive probleme mit den if befehlen da diese die möglichkeit des Bewegens der Punkte blockieren warum auch immer, weil areas eigentlich gleich false ist.
+
+```js
+if (fixAB && areas) {
+    drawSquares();
+    quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
+}
+if (areas && (parseFloat(alpha.toFixed(2)) === 90 || parseFloat(beta.toFixed(2)) === 90 || parseFloat(gamma.toFixed(2)) === 90)) {
+    //drawSquares();
+}
+```
+wenn man den code löscht kann man die punkte nach aktivierung von winkel diese wenigstens wieder bewegen.
+Bücherschleppen gut überstanden? :) 
+
+achso der getter 
+```js
+let squarePoints = getSquarePoints();
+```
+crasht bei mir alles also da verschwindet das grid und alles zeichnungen.
+
+***
+
+## 23.03. / ??
+Dann fliegt der Getter schonmal und ich bastel mit Chrome weiter. :)
+
+Anscheinend habe ich irgendwie das Problem mit dem Verschieben der Punkte gelöst. Zumindest geht es jetzt bei mir.
+Allerdings: falls FixAB aktiv ist und $C$ direkt auf $A$ oder $B$ abgelegt wird, kann man $C$ nicht mehr "greifen" und weiter schieben.
+
+Plus, die Quadrate für Seiten $a$ und $b$ sehen schon mal ganz gut aus von den Eckpunkten her.
+
+![screen](./imgs/Screenshot%202025-03-22%20at%2022-40-48%20Pythagoras%20Explorer.png)
+
+Aber die Eckpuntke sind irgendwie komisch verbunden..
+
+PS: Der Packesel hat den Tag überlebt ^^
+
+## 23.03. / 17.51 Mako
+
+Ich habe mich mal der sache angenommen also die hälfte funzt jetzt auch richtig aber die andere läuft noch immer nicht. 
+also manchmal werden die vierecke sauber und ordentlich erstellt aber an manchen überprüfungen habe ich noch logische Fehler drinnen i guess. sonst habe ich angefangen die Rechte seite in angriff zu nehemen da funzt aber noch alles.
+
+schönen rest Sonntag dir und danke schonmal für die Hilfe, das hat mich 3 schritte mindestens vorran gebracht. ^^
+![screen](./imgs/Screenshot%202025-03-23%20191502.png)
