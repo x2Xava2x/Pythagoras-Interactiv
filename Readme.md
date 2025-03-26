@@ -80,6 +80,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
-schönen rest Sonntag dir und danke schonmal für die Hilfe, das hat mich 3 schritte mindestens vorran gebracht. ^^
-![screen](./imgs/Screenshot%202025-03-23%20191502.png)
