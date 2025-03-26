@@ -1,77 +1,79 @@
-# Devlog
+# Algebraic and Geometric Area Proof – Interactive Visualization
 
-## 21.03. / 23.10, Simko
+Dieses Projekt wurde im Rahmen einer Hausarbeit an der Universität Potsdam im Modul **Stoffdidaktik der Mathematik** von **Martin Kauter** entwickelt. Ziel ist es, die Herleitung und den Beweis der Flächenformel für rechtwinklige Dreiecke sowohl **algebraisch** als auch **geometrisch** interaktiv darzustellen. Dabei werden dynamische Grafiken, Formeln und Benutzerinteraktionen kombiniert, um mathematische Zusammenhänge verständlich zu machen.
 
-### 1. JS Imports
+## Überblick
 
-Sollte die Seite nicht richtig laden, füge nochmal die Imports neu ein. Ich hatte das Problem auch - kommt von Github.
-```js
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-<script defer src="squares.js"></script>
-<script defer src="SteckeAB_Winkel_Grid.js"></script>
-```
+Das Programm stellt ein rechtwinkliges Dreieck dar, bei dem die Benutzer:innen Punkte verschieben und verschiedene Beweisformen einblenden können. Unterstützt werden:
 
-### 2. SquarePoints
+- **Algebraischer Beweis** der Flächenformel
+- **Geometrischer Beweis**
+- **Veranschaulichung des Satzes von Pythagoras**
+- **Dynamische Winkel- und Flächenanzeige**
 
-File: `squares.js:22`
+---
 
-Segment: `function calculateSquarePointPosition(...)`
+## Dateien und ihre Funktion
 
-```js
-if (p1.x === p2.x) {
-    // Sonderfall bei gleichem X-Wert
-    return;
-}
-```
-Liegen $p_1$ und $p_2$ vertikal auf einer Gerade beendet die Funktion und
-```js
-let squarePoints = [];
-```
-enthält dann nur 2 Punkte.
-```js
-function drawSquares() { ... }
-```
-erwartet aber genau 4 Punkte. Das gefällt `p5JS` aber nicht.
+### `algebraic-proof-area.js`
+- Zeigt den **algebraischen Beweis** der Flächenformel.
+- Nutzt MathJax zur Darstellung mathematischer Formeln.
+- Wird aktiviert, wenn im Dreieck ein rechter Winkel erkannt wird.
+- Formuliert die Flächeninhalte mit Höhen und Seitenlängen.
 
-Mehr dann am Sonntag. Oder morgen schon wenn ich nicht vom Bücher schleppen kaputt bin :)
+### `geometric-proof-area.js`
+- Steuert die Anzeige des **geometrischen Beweises**.
+- Verhindert gleichzeitige Darstellung mit dem algebraischen Beweis.
+- Schaltet den Modus per Button.
 
-***
+### `squares.js`
+- Visualisiert die **Quadrate über den Seiten des Dreiecks**.
+- Dient zur interaktiven **Herleitung des Satzes des Pythagoras**.
+- Berechnet abhängig vom Winkel, ob die Visualisierung aktiviert wird.
+- Bezieht sich auf rechtwinklige Dreiecke.
 
-## 22.03 / 14.30 Mako
-Ich habe mal die Sonderfälle mit eingefügt müsste aber nochaml überprüfen, wenn die Vierecke gezeichnet werden, ob die auch auf der richtigen seite liegen... ist nur ein Minuszeichen mehr oder weniger.
+### `SteckeAB_Winkel_Grid.js`
+- Zentrale Datei für die **interaktive Geometrie**.
+- Zeichnet das Dreieck auf einem Raster.
+- Ermöglicht Drag-and-Drop der Eckpunkte.
+- Berechnet Winkel α, β und γ live.
+- Zeigt ein Raster sowie optional Winkel und Hilfselemente an.
 
-sonst gibt es in `StreckenAB_Winkel_Grid.js` massive probleme mit den if befehlen da diese die möglichkeit des Bewegens der Punkte blockieren warum auch immer, weil areas eigentlich gleich false ist.
+---
 
-```js
-if (fixAB && areas) {
-    drawSquares();
-    quad(squarePoints[0].x,squarePoints[0].y,squarePoints[1].x,squarePoints[1].y,squarePoints[2].x,squarePoints[2].y,squarePoints[3].x,squarePoints[3].y);
-}
-if (areas && (parseFloat(alpha.toFixed(2)) === 90 || parseFloat(beta.toFixed(2)) === 90 || parseFloat(gamma.toFixed(2)) === 90)) {
-    //drawSquares();
-}
-```
-wenn man den code löscht kann man die punkte nach aktivierung von winkel diese wenigstens wieder bewegen.
-Bücherschleppen gut überstanden? :) 
+## Verwendung
 
-achso der getter 
-```js
-let squarePoints = getSquarePoints();
-```
-crasht bei mir alles also da verschwindet das grid und alles zeichnungen.
+1. Öffne das HTML-Dokument, das diese Dateien einbindet.
+2. Bewege die Punkte, um verschiedene Dreiecksformen zu erzeugen.
+3. Aktiviere per Buttons:
+    - Den algebraischen Beweis
+    - Den geometrischen Beweis
+    - Die Flächen der Quadrate (Pythagoras)
 
-***
+---
 
-## 23.03. / ??
-Dann fliegt der Getter schonmal und ich bastel mit Chrome weiter. :)
+## Lizenz
 
-Anscheinend habe ich irgendwie das Problem mit dem Verschieben der Punkte gelöst. Zumindest geht es jetzt bei mir.
-Allerdings: falls FixAB aktiv ist und $C$ direkt auf $A$ oder $B$ abgelegt wird, kann man $C$ nicht mehr "greifen" und weiter schieben.
+Dieses Projekt wurde ausschließlich für didaktische Zwecke im Rahmen einer universitären Lehrveranstaltung entwickelt und unterliegt der MIT Lizenz.
 
-Plus, die Quadrate für Seiten $a$ und $b$ sehen schon mal ganz gut aus von den Eckpunkten her.
+MIT-License
 
-![screen](./imgs/Screenshot%202025-03-22%20at%2022-40-48%20Pythagoras%20Explorer.png)
+Copyright (c) 2024 x2Xava2x
 
-Aber die Eckpuntke sind irgendwie komisch verbunden..
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-PS: Der Packesel hat den Tag überlebt ^^
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
