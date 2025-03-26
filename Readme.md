@@ -48,7 +48,7 @@ Das Programm stellt ein rechtwinkliges Dreieck dar, bei dem die Benutzer:innen P
 1. Öffne das HTML-Dokument, das diese Dateien einbindet.
 2. Bewege die Punkte, um verschiedene Dreiecksformen zu erzeugen.
 3. Aktiviere per Buttons:
-    - Den algebraischen Beweis
+    - Den Ähnlichkeitsbeweis
     - Den geometrischen Beweis
     - Die Flächen der Quadrate (Pythagoras)
 
