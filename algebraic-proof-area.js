@@ -1,6 +1,7 @@
 let algebraic = false;
 let s2 = false;
 let s3 = false;
+let H;
 
 function algebraicProofText() {
     const text01 = document.getElementById("text-alg01");
@@ -80,7 +81,16 @@ function algebraicProofText() {
     desc.innerHTML = "";
     MathJax.typesetPromise([desc]);
 
-    const proofText = "du benörigst als erstes einen Rechten Winkel in deinem Dreieck! Der Satz des Pythagoras gilt nur in rechtwinkligen Dreiecken, nicht in allgemeinen.";
+    const proofText = `
+        Der Satz des Pythagoras ist ausschließlich auf rechtwinklige Dreiecke anwendbar.
+        Er besagt: In einem rechtwinkligen Dreieck ist das Quadrat der Hypotenuse gleich der Summe der Quadrate der beiden Katheten, also:
+        \\[
+            a^2+b^2=c^2
+        \\]
+        Damit diese Beziehung gültig ist, muss das Dreieck einen rechten Winkel (90°) enthalten.
+        Liegt kein rechter Winkel vor, handelt es sich nicht um ein rechtwinkliges Dreieck, somit ist der Satz des Pythagoras nicht anwendbar.
+        Bitte überprüfe daher, ob dein konstruiertes Dreieck tatsächlich einen rechten Winkel enthält, bevor du versuchst, eine entsprechende Herleitung oder Berechnung durchzuführen.
+        `;
     const el = document.getElementById("text-alg");
     el.innerHTML = proofText;
     //neues Rendering

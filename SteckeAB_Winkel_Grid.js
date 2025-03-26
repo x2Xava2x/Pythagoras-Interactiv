@@ -50,9 +50,9 @@ function draw() {
         noFill();
         stroke(0);
         triangle1 = {
-            A: points[0],
-            B: points[1],
-            C: points[2],
+            A: { x: points[0].x, y: points[0].y },
+            B: { x: points[1].x, y: points[1].y },
+            C: { x: points[2].x, y: points[2].y },
             a: dist(points[1].x, points[1].y, points[2].x, points[2].y) * cmPerGrid,
             b: dist(points[0].x, points[0].y, points[2].x, points[2].y) * cmPerGrid,
             c: dist(points[0].x, points[0].y, points[1].x, points[1].y) * cmPerGrid
