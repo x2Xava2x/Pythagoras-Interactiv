@@ -1,4 +1,6 @@
-# Algebraic and Geometric Area Proof – Interactive Visualization
+# Pythagorean Theorem - Algebraic and Geometric Proof - Interactive Visualization
+
+
 
 Dieses Projekt wurde im Rahmen einer Hausarbeit an der Universität Potsdam im Modul **Stoffdidaktik der Mathematik** von **Martin Kauter** entwickelt. Ziel ist es, die Herleitung und den Beweis der Flächenformel für rechtwinklige Dreiecke sowohl **algebraisch** als auch **geometrisch** interaktiv darzustellen. Dabei werden dynamische Grafiken, Formeln und Benutzerinteraktionen kombiniert, um mathematische Zusammenhänge verständlich zu machen.
 
