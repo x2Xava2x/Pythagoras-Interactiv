@@ -1,4 +1,4 @@
-# Pythagorean Theorem - Algebraic and Geometric Proof - Interactive Visualization
+# Pythagorean Theorem - proof of similarity and Geometric Proof - Interactive Visualization
 
 
 
@@ -18,7 +18,7 @@ Das Programm stellt ein rechtwinkliges Dreieck dar, bei dem die Benutzer:innen P
 ## Dateien und ihre Funktion
 
 ### `algebraic-proof-area.js`
-- Zeigt den **algebraischen Beweis** der Flächenformel.
+- Zeigt den **Ähnlichkeitsbeweis** der Flächenformel.
 - Nutzt MathJax zur Darstellung mathematischer Formeln.
 - Wird aktiviert, wenn im Dreieck ein rechter Winkel erkannt wird.
 - Formuliert die Flächeninhalte mit Höhen und Seitenlängen.
