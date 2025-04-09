@@ -2,7 +2,7 @@
 
 
 
-Dieses Projekt wurde Neben einer Hausarbeit an der Universität Potsdam im Modul **Stoffdidaktik der Mathematik** von **Martin Kauter** entwickelt. Ziel ist es, die Herleitung und den Beweis der Flächenformel für rechtwinklige Dreiecke sowohl **algebraisch** als auch **geometrisch** interaktiv darzustellen. Dabei werden dynamische Grafiken, Formeln und Benutzerinteraktionen kombiniert, um mathematische Zusammenhänge verständlich zu machen.
+Dieses Projekt wurde neben einer Hausarbeit an der Universität Potsdam im Modul **Stoffdidaktik der Mathematik** von **Martin Kauter** entwickelt. Ziel ist es, die Herleitung und den Beweis der Flächenformel für rechtwinklige Dreiecke sowohl **algebraisch** als auch **geometrisch** interaktiv darzustellen. Dabei werden dynamische Grafiken, Formeln und Benutzerinteraktionen kombiniert, um mathematische Zusammenhänge verständlich zu machen.
 
 ## Überblick
 
